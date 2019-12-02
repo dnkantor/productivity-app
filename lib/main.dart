@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget> [
-                        Text("Add a task.", style: mainPageTitleStyle,),
+                        Text("Add a task", style: mainPageTitleStyle,),
                         Container()
                       ],
                     ),
