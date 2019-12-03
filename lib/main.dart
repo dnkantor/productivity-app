@@ -1,3 +1,4 @@
+import 'package:be_productive/UI/main/main_page.dart';
 import 'package:flutter/material.dart';
 import 'models/global.dart';
 
@@ -37,11 +38,9 @@ class _MyHomePageState extends State<MyHomePage> {
             child: new Scaffold(
               body: Stack(
                   children: <Widget> [
-                    TabBarView(
+                  TabBarView(
                     children: [
-                      new Container(
-                        color: darkGreyColor,
-                      ),
+                      MainPage(),
                       new Container(color: Colors.black,),
                       new Container(
                         color: Colors.lightGreen,
