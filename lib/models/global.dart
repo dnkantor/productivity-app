@@ -8,3 +8,9 @@ TextStyle mainPageTitleStyle = new TextStyle( fontFamily: 'Avenier',
                                               color: darkGreyColor,
                                               fontSize: 40,
                                             );
+
+TextStyle mainPageNotesStyle = new TextStyle( fontFamily: 'Avenier', 
+                                              fontWeight: FontWeight.bold,
+                                              color: darkGreyColor,
+                                              fontSize: 30,
+                                            );
