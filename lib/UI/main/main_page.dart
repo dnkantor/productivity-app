@@ -15,16 +15,48 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     taskList = getList();
-    return Container(
-      color: darkGreyColor,
-      child: Theme (
-          data: ThemeData(canvasColor: Colors.transparent),
-          child: ReorderableListView(
-          padding: EdgeInsets.only(top: 250),
-          children: taskList.map((item) => _buildListTile(context, item)).toList(), 
-          onReorder: _onReorder,
-        ),
-      ),
+    return new Container(
+              color: darkGreyColor,
+              child: Stack(
+                children: [
+                Theme (
+                      data: ThemeData(canvasColor: Colors.transparent),
+                      child: ReorderableListView(
+                        padding: EdgeInsets.only(top: 250),
+                        children: taskList.map((item) => _buildListTile(context, item)).toList(), 
+                        onReorder: _onReorder,
+                  ),
+                ),
+                Container( 
+                  padding: EdgeInsets.only(left: 50),
+                  height: 165,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(50),
+                      bottomRight: Radius.circular(50)
+                    ),
+                    color: Colors.white,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget> [
+                      Text("Add a task", style: mainPageTitleStyle,),
+                      Container()
+                    ],
+                  ),
+                ),
+                Container(
+                        height: 70,
+                        width: 70,
+                        margin: EdgeInsets.only(top: 130, left: MediaQuery.of(context).size.width * 0.5 - 35),
+                        child: FloatingActionButton(
+                          child: Icon(Icons.add, size: 50,),
+                          backgroundColor: redColor,
+                          onPressed: () {},
+                        ),
+                      ),
+                ]
+              )
     );
   }
 
